@@ -1,0 +1,27 @@
+const images = {
+  logo: require('static/icon/logo.png'),
+  new_tweet: require('static/icon/new_tweet.png'),
+  trend: require('static/icon/trend.png'),
+  profile_image: require('static/icon/osman.jpg'),
+  home: require('static/icon/home.png'),
+  home_selected: require('static/icon/home_selected.png'),
+  search: require('static/icon/search.png'),
+  search_selected: require('static/icon/search_selected.png'),
+  notifications: require('static/icon/notifications.png'),
+  notifications_selected: require('static/icon/notifications_selected.png'),
+  messages: require('static/icon/messages.png'),
+  messages_selected: require('static/icon/messages_selected.png'),
+  analytics: require('static/icon/analytics.png'),
+  bookmarks: require('static/icon/bookmarks.png'),
+  help: require('static/icon/help.png'),
+  lists: require('static/icon/lists.png'),
+  moments: require('static/icon/moments.png'),
+  profile: require('static/icon/profile.png'),
+  settings: require('static/icon/settings.png'),
+  settings_selected: require('static/icon/settings_selected.png'),
+  switch: require('static/icon/switch.png'),
+  topics: require('static/icon/topics.png'),
+  twitter_ads: require('static/icon/twitter_ads.png'),
+};
+
+export default images;
