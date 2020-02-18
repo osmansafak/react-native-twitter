@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import MenuItem from 'components/MenuItem';
 import colors from 'config/colors';
 import images from 'config/images';
 
@@ -93,12 +94,7 @@ class Menu extends Component {
             item.icon === 'seperator' ? (
               <View key={item.text} style={styles.seperator} />
             ) : (
-              <View key={item.text}>
-                <TouchableOpacity style={styles.menuItem}>
-                  <Image style={styles.menuIcon} source={item.icon} />
-                  <Text style={styles.menuText}>{item.text}</Text>
-                </TouchableOpacity>
-              </View>
+              <MenuItem data={item} key={item.text} />
             ),
           )}
         </ScrollView>
@@ -180,22 +176,6 @@ const styles = StyleSheet.create({
     height: 0.5,
     marginTop: 10,
     marginBottom: 10,
-  },
-  menuItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 10,
-  },
-  menuIcon: {
-    width: 25,
-    height: 25,
-    resizeMode: 'contain',
-    marginRight: 10,
-  },
-  menuText: {
-    color: colors.text,
-    fontSize: 18,
   },
   footerText: {
     color: colors.text,
