@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {View, FlatList} from 'react-native';
-import colors from 'config/colors';
 import palette from 'config/palette';
 import Tweet from 'components/Tweet';
 import TweetData from 'data/tweets.json';

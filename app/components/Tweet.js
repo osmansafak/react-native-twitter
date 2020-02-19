@@ -24,7 +24,11 @@ const Tweet = ({data}) => (
         <Text style={styles.tweetText}>
           {data.tweetText.split(/\B(\#[a-zA-Z]+\b)(?!;)/).map(item => {
             if (item.startsWith('#')) {
-              return <Text style={styles.tweetLink}>{item}</Text>;
+              return (
+                <Text style={styles.tweetLink} key={item}>
+                  {item}
+                </Text>
+              );
             }
             return item;
           })}
@@ -42,19 +46,6 @@ const Tweet = ({data}) => (
     <View style={styles.seperator} />
   </>
 );
-
-const RenderTweet = text => {
-  const textSplit = text.split(/\B(\#[a-zA-Z]+\b)(?!;)/);
-  let newText;
-  textSplit.forEach(item => {
-    if (item.startsWith('#')) {
-      newText += <Text style={styles.tweetLink}>item</Text>;
-    } else {
-      newText += item;
-    }
-  });
-  return newText;
-};
 
 const styles = StyleSheet.create({
   container: {
