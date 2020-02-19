@@ -30,6 +30,13 @@ const palette = {
       justifyContent: 'center',
     },
   },
+  screen: {
+    container: {
+      flex: 1,
+      padding: 10,
+      backgroundColor: colors.background,
+    },
+  },
 };
 
 export default palette;
