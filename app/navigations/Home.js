@@ -1,9 +1,11 @@
 import React from 'react';
 import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {createStackNavigator} from 'react-navigation-stack';
+import colors from 'config/colors';
 import images from 'config/images';
 import palette from 'config/palette';
 import HomeScreen from 'screens/Home';
+import TweetScreen from 'screens/Tweet';
 
 const HomeNavigation = createStackNavigator({
   Home: {
@@ -30,6 +32,16 @@ const HomeNavigation = createStackNavigator({
           </TouchableOpacity>
         </View>
       ),
+    }),
+  },
+  Tweet: {
+    screen: TweetScreen,
+    navigationOptions: () => ({
+      title: 'Tweet',
+      headerStyle: {
+        backgroundColor: colors.background,
+      },
+      headerTintColor: colors.link,
     }),
   },
 });

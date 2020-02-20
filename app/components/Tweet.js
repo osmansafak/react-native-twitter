@@ -1,11 +1,16 @@
 import React from 'react';
-import {Text, View, Image, StyleSheet} from 'react-native';
+import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import colors from 'config/colors';
 import images from 'config/images';
 
-const Tweet = ({data}) => (
+const Tweet = ({data, navigation, isReply, replayTo}) => (
   <>
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      disabled={isReply}
+      onPress={() => {
+        navigation.navigate('Tweet', data);
+      }}>
       <View style={styles.profileContainer}>
         <Image
           style={styles.profilePhoto}
@@ -22,6 +27,11 @@ const Tweet = ({data}) => (
           <Text style={styles.displayName}>{data.displayName}</Text>{' '}
           {data.profileName} · {data.date}
         </Text>
+        {isReply && (
+          <Text style={styles.reply}>
+            Replying to <Text style={styles.replyTo}>{replayTo}</Text>
+          </Text>
+        )}
         <Text style={styles.tweetText}>
           {data.tweetText.split(/\B(\#[a-zA-Z]+\b)(?!;)/).map(item => {
             if (item.startsWith('#')) {
@@ -34,7 +44,7 @@ const Tweet = ({data}) => (
             return item;
           })}
         </Text>
-        {data.image && (
+        {!isReply && data.image && (
           <Image
             style={styles.tweetImage}
             source={{
@@ -53,7 +63,7 @@ const Tweet = ({data}) => (
           ))}
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
     <View style={styles.seperator} />
   </>
 );
@@ -90,6 +100,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.text,
     fontWeight: 'bold',
+  },
+  reply: {
+    fontSize: 16,
+    color: colors.textFaded,
+    marginTop: 5,
+  },
+  replyTo: {
+    color: colors.link,
   },
   tweetText: {
     marginTop: 5,
