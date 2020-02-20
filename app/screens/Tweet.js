@@ -15,7 +15,7 @@ const TweetScreen = ({
     <FlatList
       data={TweetData}
       renderItem={({item}) => (
-        <Tweet data={item} isReply replayTo={params.profileName} />
+        <Tweet data={item} replayTo={params.profileName} />
       )}
       ListHeaderComponent={() => (
         <>

@@ -3,11 +3,11 @@ import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import colors from 'config/colors';
 import images from 'config/images';
 
-const Tweet = ({data, navigation, isReply, replayTo}) => (
+const Tweet = ({data, navigation, replayTo}) => (
   <>
     <TouchableOpacity
       style={styles.container}
-      disabled={isReply}
+      disabled={!!replayTo}
       onPress={() => {
         navigation.navigate('Tweet', data);
       }}>
@@ -27,7 +27,7 @@ const Tweet = ({data, navigation, isReply, replayTo}) => (
           <Text style={styles.displayName}>{data.displayName}</Text>{' '}
           {data.profileName} · {data.date}
         </Text>
-        {isReply && (
+        {replayTo && (
           <Text style={styles.reply}>
             Replying to <Text style={styles.replyTo}>{replayTo}</Text>
           </Text>
@@ -44,7 +44,7 @@ const Tweet = ({data, navigation, isReply, replayTo}) => (
             return item;
           })}
         </Text>
-        {!isReply && data.image && (
+        {!replayTo && data.image && (
           <Image
             style={styles.tweetImage}
             source={{
