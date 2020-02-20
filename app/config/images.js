@@ -22,6 +22,10 @@ const images = {
   switch: require('static/icon/switch.png'),
   topics: require('static/icon/topics.png'),
   twitter_ads: require('static/icon/twitter_ads.png'),
+  reply: require('static/icon/reply.png'),
+  like: require('static/icon/like.png'),
+  retweet: require('static/icon/retweet.png'),
+  share: require('static/icon/share.png'),
 };
 
 export default images;

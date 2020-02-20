@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, Image, StyleSheet} from 'react-native';
 import colors from 'config/colors';
+import images from 'config/images';
 
 const Tweet = ({data}) => (
   <>
@@ -41,11 +42,30 @@ const Tweet = ({data}) => (
             }}
           />
         )}
+        <View style={styles.groupList}>
+          {data.actions.map(item => (
+            <View style={groupStyle(item.key)} key={`${data.key}-${item.key}`}>
+              <Image style={styles.groupIcon} source={images[item.key]} />
+              {item.value !== 0 && (
+                <Text style={styles.groupText}>{item.value}</Text>
+              )}
+            </View>
+          ))}
+        </View>
       </View>
     </View>
     <View style={styles.seperator} />
   </>
 );
+
+const groupStyle = key => {
+  return {
+    flexGrow: key === 'share' ? 0 : 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  };
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -85,6 +105,23 @@ const styles = StyleSheet.create({
     aspectRatio: 9 / 6,
     resizeMode: 'cover',
     borderRadius: 10,
+  },
+  groupList: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  groupIcon: {
+    width: 20,
+    height: 20,
+    resizeMode: 'contain',
+  },
+  groupText: {
+    marginLeft: 5,
+    fontSize: 14,
+    color: colors.textFaded,
   },
   seperator: {
     backgroundColor: colors.seperator,

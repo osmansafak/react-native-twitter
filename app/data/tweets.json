@@ -6,7 +6,25 @@
     "profilePhoto": "https://pbs.twimg.com/profile_images/763061332702736385/KoK6gHzp_400x400.jpg",
     "date": "1m",
     "tweetText": "What technologies, test-frameworks or libraries are you using for end-to-end (e2e) testing of your #ReactNative apps?",
-    "image": null
+    "image": null,
+    "actions": [
+      {
+        "key": "reply",
+        "value": 12
+      },
+      {
+        "key": "retweet",
+        "value": 4
+      },
+      {
+        "key": "like",
+        "value": 81
+      },
+      {
+        "key": "share",
+        "value": 0
+      }
+    ]
   },
   {
     "key": "t1",
@@ -15,7 +33,25 @@
     "profilePhoto": "https://pbs.twimg.com/profile_images/1194751949821939712/3VBu4_Sa_400x400.jpg",
     "date": "13m",
     "tweetText": "Utah Senate votes unanimously to decriminalize polygamy among consenting adults, reducing penalties for a practice with deep religious roots in the predominantly Mormon state",
-    "image": "https://pbs.twimg.com/media/ERIPTbVWkAA-oN3?format=jpg&name=900x900"
+    "image": "https://pbs.twimg.com/media/ERIPTbVWkAA-oN3?format=jpg&name=900x900",
+    "actions": [
+      {
+        "key": "reply",
+        "value": 15
+      },
+      {
+        "key": "retweet",
+        "value": 9
+      },
+      {
+        "key": "like",
+        "value": 82
+      },
+      {
+        "key": "share",
+        "value": 0
+      }
+    ]
   },
   {
     "key": "t2",
@@ -24,7 +60,25 @@
     "profilePhoto": "https://pbs.twimg.com/profile_images/1174747027986452480/cSlw47L-_400x400.png",
     "date": "15m",
     "tweetText": "Ever have a great idea while chopping some vegetables, stirring a pot of soup, or washing the dishes? Just say, “Hey Siri, take a note” to start a new note, hands-free. #HeySiri",
-    "image": "https://pbs.twimg.com/media/EQnC-0pX0AUUZwH?format=jpg&name=medium"
+    "image": "https://pbs.twimg.com/media/EQnC-0pX0AUUZwH?format=jpg&name=medium",
+    "actions": [
+      {
+        "key": "reply",
+        "value": 3
+      },
+      {
+        "key": "retweet",
+        "value": 3
+      },
+      {
+        "key": "like",
+        "value": 10
+      },
+      {
+        "key": "share",
+        "value": 0
+      }
+    ]
   },
   {
     "key": "t3",
@@ -33,7 +87,25 @@
     "profilePhoto": "https://pbs.twimg.com/profile_images/900261211509489666/-1Fu5hU8_400x400.jpg",
     "date": "32m",
     "tweetText": "EXCLUSIVE: China is tracking every movement of its Uighur minority to find reasons to detain them, a leaked document DW obtained from a whistleblower shows. #KarakaxList",
-    "image": "https://pbs.twimg.com/media/EQ_VuJKWkAQZquc?format=jpg&name=medium"
+    "image": "https://pbs.twimg.com/media/EQ_VuJKWkAQZquc?format=jpg&name=medium",
+    "actions": [
+      {
+        "key": "reply",
+        "value": 12
+      },
+      {
+        "key": "retweet",
+        "value": 4
+      },
+      {
+        "key": "like",
+        "value": 16
+      },
+      {
+        "key": "share",
+        "value": 0
+      }
+    ]
   },
   {
     "key": "t4",
@@ -42,7 +114,25 @@
     "profilePhoto": "https://pbs.twimg.com/profile_images/1194751949821939712/3VBu4_Sa_400x400.jpg",
     "date": "2h",
     "tweetText": "Scorsese awaits next film by director of South Korea's Oscar-winning 'Parasite' ",
-    "image": "https://pbs.twimg.com/media/ERINy6SXYAE6x-C?format=jpg&name=900x900"
+    "image": "https://pbs.twimg.com/media/ERINy6SXYAE6x-C?format=jpg&name=900x900",
+    "actions": [
+      {
+        "key": "reply",
+        "value": 0
+      },
+      {
+        "key": "retweet",
+        "value": 0
+      },
+      {
+        "key": "like",
+        "value": 0
+      },
+      {
+        "key": "share",
+        "value": 0
+      }
+    ]
   },
   {
     "key": "t5",
@@ -51,7 +141,25 @@
     "profilePhoto": "https://pbs.twimg.com/profile_images/508960761826131968/LnvhR8ED_400x400.png",
     "date": "7h",
     "tweetText": "President Trump is lashing out after former President Obama marked the 11th anniversary on Monday of signing a nearly $800 billion stimulus package designed to reverse the effects of the Great Recession.",
-    "image": "https://cdn.cnn.com/cnnnext/dam/assets/200218143745-obama-trump-split-super-tease.jpg"
+    "image": "https://cdn.cnn.com/cnnnext/dam/assets/200218143745-obama-trump-split-super-tease.jpg",
+    "actions": [
+      {
+        "key": "reply",
+        "value": 0
+      },
+      {
+        "key": "retweet",
+        "value": 0
+      },
+      {
+        "key": "like",
+        "value": 0
+      },
+      {
+        "key": "share",
+        "value": 0
+      }
+    ]
   },
   {
     "key": "t6",
@@ -60,6 +168,24 @@
     "profilePhoto": "https://pbs.twimg.com/profile_images/1025398592410927104/yUEAgsv6_400x400.jpg",
     "date": "Feb 18",
     "tweetText": "#Bosch CEO Denner opening up the #BCW20 talking about responsibility and CO2 neutrality. Climate change is the biggest topic of our times. #IoT",
-    "image": "https://pbs.twimg.com/media/ERIEDJaWkAE6-Yv?format=jpg&name=medium"
+    "image": "https://pbs.twimg.com/media/ERIEDJaWkAE6-Yv?format=jpg&name=medium",
+    "actions": [
+      {
+        "key": "reply",
+        "value": 0
+      },
+      {
+        "key": "retweet",
+        "value": 0
+      },
+      {
+        "key": "like",
+        "value": 0
+      },
+      {
+        "key": "share",
+        "value": 0
+      }
+    ]
   }
 ]
