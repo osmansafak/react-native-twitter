@@ -30,6 +30,13 @@ const palette = {
       justifyContent: 'center',
     },
   },
+  tab: {
+    image: {
+      height: 25,
+      width: 25,
+      resizeMode: 'contain',
+    },
+  },
   screen: {
     container: {
       flex: 1,

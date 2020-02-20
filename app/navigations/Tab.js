@@ -49,7 +49,7 @@ const navigatorConfig = {
           icon = focused ? images.home_selected : images.home;
           break;
       }
-      return <Image style={{...palette.header.image}} source={icon} />;
+      return <Image style={{...palette.tab.image}} source={icon} />;
     },
   }),
 };
