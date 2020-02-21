@@ -26,6 +26,7 @@ const images = {
   like: require('static/icon/like.png'),
   retweet: require('static/icon/retweet.png'),
   share: require('static/icon/share.png'),
+  arrow_bottom: require('static/icon/arrow_bottom.png'),
 };
 
 export default images;
