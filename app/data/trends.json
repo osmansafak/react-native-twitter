@@ -1,0 +1,62 @@
+[
+  {
+    "key": "trend0",
+    "order": 1,
+    "text": "Start ins Wochenende",
+    "tweets": null
+  },
+  {
+    "key": "trend1",
+    "order": 2,
+    "text": "Moin",
+    "tweets": 8537
+  },
+  {
+    "key": "trend2",
+    "order": 3,
+    "text": "Schönen Freitag",
+    "tweets": null
+  },
+  {
+    "key": "trend3",
+    "order": 4,
+    "text": "Guten Morgen ihr Lieben",
+    "tweets": null
+  },
+  {
+    "key": "trend4",
+    "order": 5,
+    "text": "Weekend",
+    "tweets": 229000
+  },
+  {
+    "key": "trend5",
+    "order": 6,
+    "text": "#heartsandminds",
+    "tweets": null
+  },
+  {
+    "key": "trend6",
+    "order": 7,
+    "text": "Jimins",
+    "tweets": 9194
+  },
+  {
+    "key": "trend7",
+    "order": 8,
+    "text": "#Tesla",
+    "tweets": 4772
+  },
+  {
+    "key": "trend8",
+    "order": 9,
+    "text": "#OldMe",
+    "tweets": 9624
+  },
+  {
+    "key": "trend9",
+    "order": 10,
+    "text": "#MAP_OF_THE__SOUL_7",
+    "tweets": 26700
+  }
+]
