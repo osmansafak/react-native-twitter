@@ -119,6 +119,8 @@ const styles = StyleSheet.create({
   tweetImage: {
     width: '100%',
     marginTop: 10,
+    aspectRatio: 9 / 6,
+    resizeMode: 'cover',
     borderRadius: 10,
   },
   date: {
