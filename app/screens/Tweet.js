@@ -1,5 +1,12 @@
-import * as React from 'react';
-import {View, Text, Image, FlatList, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  StyleSheet,
+  Dimensions,
+} from 'react-native';
 import colors from 'config/colors';
 import images from 'config/images';
 import palette from 'config/palette';
@@ -10,71 +17,83 @@ const TweetScreen = ({
   navigation: {
     state: {params},
   },
-}) => (
-  <View style={{...palette.screen.container}}>
-    <FlatList
-      data={TweetData}
-      renderItem={({item}) => (
-        <Tweet data={item} replayTo={params.profileName} />
-      )}
-      ListHeaderComponent={() => (
-        <>
-          <View style={styles.container}>
-            <View style={styles.userInfo}>
-              <Image
-                style={styles.profilePhoto}
-                source={{
-                  uri: params.profilePhoto,
-                }}
-              />
-              <View style={styles.userName}>
-                <Text style={styles.displayName}>{params.displayName}</Text>
-                <Text style={styles.profileName}>{params.profileName}</Text>
+}) => {
+  const [aspectRatio, setAspectRatio] = useState(1);
+
+  useEffect(() => {
+    if (params.image) {
+      Image.getSize(params.image, (width, height) =>
+        setAspectRatio(width / height),
+      );
+    }
+  }, [params.image]);
+
+  return (
+    <View style={{...palette.screen.container}}>
+      <FlatList
+        data={TweetData}
+        renderItem={({item}) => (
+          <Tweet data={item} replayTo={params.profileName} />
+        )}
+        ListHeaderComponent={() => (
+          <>
+            <View style={styles.container}>
+              <View style={styles.userInfo}>
+                <Image
+                  style={styles.profilePhoto}
+                  source={{
+                    uri: params.profilePhoto,
+                  }}
+                />
+                <View style={styles.userName}>
+                  <Text style={styles.displayName}>{params.displayName}</Text>
+                  <Text style={styles.profileName}>{params.profileName}</Text>
+                </View>
               </View>
+              <Text style={styles.tweetText}>
+                {params.tweetText.split(/\B(\#[a-zA-Z]+\b)(?!;)/).map(item => {
+                  if (item.startsWith('#')) {
+                    return (
+                      <Text style={styles.tweetLink} key={item}>
+                        {item}
+                      </Text>
+                    );
+                  }
+                  return item;
+                })}
+              </Text>
+              {params.image && (
+                <Image
+                  style={{...styles.tweetImage, aspectRatio}}
+                  source={{
+                    uri: params.image,
+                  }}
+                />
+              )}
+              <Text style={styles.date}>12:45 PM · Feb 20, 2020</Text>
+              <View style={styles.seperator} />
+              <Text style={styles.interaction}>
+                <Text style={styles.bold}>3</Text> Retweets{'  ·  '}
+                <Text style={styles.bold}>82</Text> Likes
+              </Text>
+              <View style={styles.seperator} />
             </View>
-            <Text style={styles.tweetText}>
-              {params.tweetText.split(/\B(\#[a-zA-Z]+\b)(?!;)/).map(item => {
-                if (item.startsWith('#')) {
-                  return (
-                    <Text style={styles.tweetLink} key={item}>
-                      {item}
-                    </Text>
-                  );
-                }
-                return item;
-              })}
-            </Text>
-            {params.image && (
-              <Image
-                style={styles.tweetImage}
-                source={{
-                  uri: params.image,
-                }}
-              />
-            )}
-            <Text style={styles.date}>12:45 PM · Feb 20, 2020</Text>
+            <View style={styles.groupList}>
+              {params.actions.map(item => (
+                <Image
+                  style={styles.groupIcon}
+                  source={images[item.key]}
+                  key={`${item.key}-${params.key}`}
+                />
+              ))}
+            </View>
             <View style={styles.seperator} />
-            <Text style={styles.interaction}>
-              <Text style={styles.bold}>3</Text> Retweets{'  ·  '}
-              <Text style={styles.bold}>82</Text> Likes
-            </Text>
-            <View style={styles.seperator} />
-          </View>
-          <View style={styles.groupList}>
-            {params.actions.map(item => (
-              <Image
-                style={styles.groupIcon}
-                source={images[item.key]}
-                key={`${item.key}-${params.key}`}
-              />
-            ))}
-          </View>
-          <View style={styles.seperator} />
-        </>
-      )}
-    />
-  </View>
-);
+          </>
+        )}
+      />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -117,10 +136,8 @@ const styles = StyleSheet.create({
     color: colors.link,
   },
   tweetImage: {
-    width: '100%',
+    width: Dimensions.get('window').width - 20,
     marginTop: 10,
-    aspectRatio: 9 / 6,
-    resizeMode: 'cover',
     borderRadius: 10,
   },
   date: {
